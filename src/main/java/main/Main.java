@@ -15,6 +15,7 @@ public class Main {
         Bank bank = new Bank("ING Bank");
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
 
         entityManager.persist(client);
         entityManager.persist(bank);

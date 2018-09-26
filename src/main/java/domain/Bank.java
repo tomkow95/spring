@@ -1,5 +1,7 @@
 package domain;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +10,7 @@ public class Bank {
     @Id
     @Column(name = "id")
     @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementator", strategy = "increment")
     private int id;
 
     @Column(name = "name")
